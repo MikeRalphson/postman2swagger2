@@ -222,7 +222,7 @@ function setSwaggerPaths() {
 
     //Get content type if available.
     activePostmanRequest.headers.replace('\n', '').replace('\r', '');
-    var headersArray = activePostmanRequest.headers.match(/("[^"]+"|[^"\s]+)/g);
+    var headersArray = activePostmanRequest.headers.match(/("[^"]+"|[^"\s]+)/g)||[];
     var contentTypeIndex = headersArray.indexOf("Content-Type:");
     if (contentTypeIndex >= 0) {
       var contentTypeValue = headersArray[(contentTypeIndex + 1)];
